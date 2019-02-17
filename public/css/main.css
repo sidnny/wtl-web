@@ -14,7 +14,7 @@ html {
 body {
   color: #000;
   font: normal 400 18px/22px minerva-modern, sans-serif;
-  background: #cabdce url(../img/lightparticles.png) fixed center center no-repeat;
+  background: #d9cedc url(../img/lightparticles.png) fixed center center no-repeat;
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -87,6 +87,7 @@ section:after {
   width: 100%;
   height: 20px;
   margin-top: 45px;
+  opacity: .25;
 }
 
 section.about:after {
