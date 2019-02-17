@@ -1,0 +1,22 @@
+{
+  "name": "wtl-web",
+  "version": "1.0.0",
+  "description": "Women Tech Leaders website",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sidnny/wtl-web.git"
+  },
+  "author": "Soraya Dib",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/sidnny/wtl-web/issues"
+  },
+  "homepage": "https://github.com/sidnny/wtl-web#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
