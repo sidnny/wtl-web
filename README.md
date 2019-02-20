@@ -1,2 +1,8 @@
-# wtl-web
-Women Tech Leaders website
+# Women Tech Leaders website
+
+## Installation
+`npm i`
+
+## Start the server
+`npm start`
+
