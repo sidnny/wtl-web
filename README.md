@@ -14,6 +14,9 @@
 ### Build the docker container
 `docker-compose up` or `docker-compose -f docker-compose-dev.yml up`
 
+### Build a running container
+`docker-compose up --build` or `docker-compose -f docker-compose-dev.yml up --build`
+
 ### List all containers
 `docker ps`
 
