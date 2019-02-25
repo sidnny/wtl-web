@@ -12,7 +12,7 @@
 `docker build -t wtl-nyc .`
 
 ### Build the docker container
-`docker run --name wtl-nyc -p 3000:3000 -d wtl-nyc`
+`docker run --name wtl-nyc -p 80:8080 -d wtl-nyc`
 
 ### List all containers
 `docker ps`
