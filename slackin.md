@@ -1,0 +1,1 @@
+./bin/slackin --port 3001 --interval 10000 --coc /code_of_conduct wtlnyc xoxp-391641189204-391324325697-486657867958-89aeaf7c3bf9e72d35457aa30560bdd7 6Ld4RHwUAAAAAGwzXLH-I1CaqGPOaIiBC2CVvZLN 6Ld4RHwUAAAAAOzjoAizcMEB-nVJ6IV0NsUzEZN_
