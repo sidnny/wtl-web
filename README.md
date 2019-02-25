@@ -22,3 +22,6 @@
 
 ### Remove the stopped container and all of the images, including unused and dangling images
 `docker system prune -a`
+
+### To rebuild an image
+`docker-compose build` or `docker-compose up --build`

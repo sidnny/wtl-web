@@ -2,9 +2,7 @@ version: '3'
 
 services:
   nodejs:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     image: nodejs
     container_name: nodejs
     restart: unless-stopped
@@ -20,11 +18,13 @@ services:
     restart: unless-stopped
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - web-root:/var/www/html
       - ./nginx-conf:/etc/nginx/conf.d
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
+      - dhparam:/etc/ssl/certs
     depends_on:
       - nodejs
     networks:
@@ -50,6 +50,12 @@ volumes:
       type: none
       # device: /Users/sidnny/Projects/wtl/wtl-web/public/
       device: /home/sid/wtl-web/public/
+      o: bind
+  dhparam:
+    driver: local
+    driver_opts:
+      type: none
+      device: /home/sid/wtl-web/dhparam/
       o: bind
 
 networks:
