@@ -6,10 +6,6 @@ WORKDIR /home/node/app
 
 COPY package*.json ./
 
-## Add application code
-COPY ./routes /routes
-COPY ./views /views
-
 USER node
 
 RUN npm install

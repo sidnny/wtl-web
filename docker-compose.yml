@@ -8,9 +8,6 @@ services:
     restart: unless-stopped
     networks:
       - app-network
-    volumes:
-      - ./:/app
-    working_dir: /app
 
   webserver:
     image: nginx:mainline-alpine
@@ -48,7 +45,6 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      # device: /Users/sidnny/Projects/wtl/wtl-web/public/
       device: /home/sid/wtl-web/public/
       o: bind
   dhparam:

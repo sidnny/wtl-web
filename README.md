@@ -9,10 +9,10 @@
 ## Using Docker
 
 ### Build and tag the docker image
-`docker build -t wtl .`
+`docker build -t wtl-nyc .`
 
 ### Build the docker container
-`docker run --name wtl -p 80:8080 -d sidnny/wtl`
+`docker run --name wtl-nyc -p 80:8080 -d wtl-nyc`
 
 ### List all containers
 `docker ps`
