@@ -8,7 +8,7 @@ router.get('/code_of_conduct', function(req, res, next) {
   res.render('coc', { title: 'Women Tech Leaders - Code of Conduct', pageId: 'code_of_conduct' });
 });
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Welcome to Women Tech Leaders - A peer group for women in tech who are managing people and leading teams.', pageId: 'index' });
+  res.render('index', { title: 'Welcome to Women Tech Leaders.', pageId: 'index' });
 });
 
 module.exports = router;
