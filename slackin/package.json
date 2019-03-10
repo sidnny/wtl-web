@@ -1,0 +1,78 @@
+{
+    "name": "slackin",
+    "version": "0.14.0",
+    "description": "Public Slack organizations made easy",
+    "repository": "rauchg/slackin",
+    "main": "dist/index",
+    "files": [
+        "dist",
+        "bin"
+    ],
+    "babel": {
+        "presets": [
+            "es2015"
+        ]
+    },
+    "dependencies": {
+        "args": "1.3.1",
+        "babel-core": "6.26.3",
+        "babel-eslint": "6.1.2",
+        "babel-polyfill": "6.26.0",
+        "babel-preset-es2015": "6.24.1",
+        "babel-register": "6.26.0",
+        "body-parser": "1.18.3",
+        "cors": "2.8.5",
+        "debug": "3.2.6",
+        "email-regex": "1.0.0",
+        "express": "4.16.4",
+        "gulp": "4.0.0",
+        "gulp-babel": "6.1.3",
+        "gulp-rimraf": "0.2.2",
+        "hostenv": "1.0.6",
+        "opentype.js": "0.4.11",
+        "socket.io": "2.1.1",
+        "superagent": "3.8.3",
+        "vd": "0.1.0"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "eslint": "2.13.1",
+        "eslint-config-default": "^0.2.0",
+        "mocha": "2.5.3",
+        "nock": "2.18.2",
+        "supertest": "0.15.0"
+    },
+    "engines": {
+        "node": ">6.11.1"
+    },
+    "bin": {
+        "slackin": "../bin/slackin"
+    },
+    "eslintConfig": {
+        "extends": "default",
+        "parser": "babel-eslint",
+        "rules": {
+            "no-var": 0
+        }
+    },
+    "scripts": {
+        "__test": "mocha && eslint lib/**",
+        "__postinstall": "gulp",
+        "__build": "gulp",
+        "start": "chmod +x bin/slackin && ./bin/slackin --port 3001 --interval 10000 --coc /code_of_conduct wtlnyc xoxp-391641189204-391324325697-486657867958-89aeaf7c3bf9e72d35457aa30560bdd7 6Ld4RHwUAAAAAGwzXLH-I1CaqGPOaIiBC2CVvZLN 6Ld4RHwUAAAAAOzjoAizcMEB-nVJ6IV0NsUzEZN_"
+    },
+    "now": {
+        "type": "npm",
+        "files": [
+            "bin",
+            "lib",
+            "gulpfile.babel.js"
+        ],
+        "env": [
+            "SLACK_API_TOKEN",
+            "SLACK_SUBDOMAIN",
+            "GOOGLE_CAPTCHA_SECRET",
+            "GOOGLE_CAPTCHA_SITEKEY"
+        ]
+    }
+}
