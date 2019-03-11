@@ -23,13 +23,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', router);
 app.use('/slack', slack);
 
-app.use('/slackin', proxy({
-  target: 'http://slackin:3001',
-  changeOrigin: true,
-  pathRewrite: {
-    '/slackin': '/'
-  }
-}))
+// app.use('/slackin', proxy({
+//   target: 'http://slackin:3001',
+//   changeOrigin: true,
+//   pathRewrite: {
+//     '/slackin': '/'
+//   }
+// }))
 
 
 // catch 404 and forward to error handler
