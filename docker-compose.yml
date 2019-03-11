@@ -20,7 +20,7 @@ services:
     ports:
       - "3001:3001"
     volumes:
-      - slackin_assets:/var/www/html/assets
+      - slackin_assets:/home/node/slackin/assets
 
   webserver:
     image: nginx:mainline-alpine
