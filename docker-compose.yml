@@ -19,6 +19,8 @@ services:
       - app-network
     ports:
       - "3001:3001"
+    volumes:
+      - slackin_assets:/var/www/html/assets
 
   webserver:
     image: nginx:mainline-alpine
@@ -29,6 +31,7 @@ services:
       - "443:443"
     volumes:
       - web-root:/var/www/html
+      - slackin_assets:/var/www/html/assets
       - ./nginx-conf:/etc/nginx/conf.d
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
@@ -52,6 +55,7 @@ services:
 volumes:
   certbot-etc:
   certbot-var:
+  slackin_assets:
   web-root:
     driver: local
     driver_opts:
