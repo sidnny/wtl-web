@@ -4,12 +4,13 @@ RUN mkdir -p /home/node/slackin/node_modules && chown -R node:node /home/node/sl
 
 WORKDIR /home/node/slackin
 
-# COPY package*.json ./
 COPY dist .
+
+COPY package*.json ./
 
 USER node
 
-# RUN npm install --unsafe-perm
+RUN npm install
 
 COPY --chown=node:node . .
 
