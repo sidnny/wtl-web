@@ -56,7 +56,7 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /home/sid/wtl-web/public/
+      device: /home/sid/wtl-web/www/public/
       o: bind
   dhparam:
     driver: local
