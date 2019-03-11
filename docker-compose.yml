@@ -47,7 +47,7 @@ services:
       - web-root:/var/www/html
     depends_on:
       - webserver
-    command: certonly --webroot --webroot-path=/var/www/html --email founders@wtl.nyc --agree-tos --no-eff-email -d wtl.nyc -d www.wtl.nyc
+    command: certonly --webroot --webroot-path=/var/www/html --email founders@wtl.nyc --agree-tos --no-eff-email --force-renewal -d wtl.nyc -d www.wtl.nyc
 
 volumes:
   certbot-etc:
