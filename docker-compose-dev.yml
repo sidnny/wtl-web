@@ -11,6 +11,8 @@ services:
       - app-network
     ports:
       - "3000:3000"
+    volumes:
+      - /Users/sidnny/Projects/wtl/wtl-web/www:/home/node/www/
 
   # slackin:
   #   build: "./slackin"

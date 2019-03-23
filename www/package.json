@@ -8,6 +8,7 @@
   },
   "main": "server.js",
   "scripts": {
+    "dev": "nodemon --watch routes --watch views --watch app.js -e js,html ./bin/www",
     "start": "node ./bin/www",
     "test": "test"
   },
@@ -32,5 +33,7 @@
     "meetup-api": "^1.4.37",
     "morgan": "~1.9.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
 }
