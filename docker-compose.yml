@@ -1,13 +1,26 @@
 version: '3'
 
 services:
+
   nodejs:
-    build: .
+    build: "./www"
     image: nodejs
     container_name: nodejs
     restart: unless-stopped
     networks:
       - app-network
+
+  # slackin:
+  #   build: "./slackin"
+  #   image: slackin
+  #   container_name: slackin
+  #   restart: unless-stopped
+  #   networks:
+  #     - app-network
+  #   ports:
+  #     - "3001:3001"
+  #   volumes:
+  #     - slackin_assets:/home/node/slackin/assets
 
   webserver:
     image: nginx:mainline-alpine
@@ -18,6 +31,7 @@ services:
       - "443:443"
     volumes:
       - web-root:/var/www/html
+      # - slackin_assets:/var/www/html/assets
       - ./nginx-conf:/etc/nginx/conf.d
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
@@ -41,11 +55,12 @@ services:
 volumes:
   certbot-etc:
   certbot-var:
+  # slackin_assets:
   web-root:
     driver: local
     driver_opts:
       type: none
-      device: /home/sid/wtl-web/public/
+      device: /home/sid/wtl-web/www/public/
       o: bind
   dhparam:
     driver: local

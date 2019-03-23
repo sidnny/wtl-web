@@ -1,8 +1,9 @@
-version: '3'
+version: "3"
 
 services:
+
   nodejs:
-    build: .
+    build: "./www"
     image: nodejs
     container_name: nodejs
     restart: unless-stopped
@@ -10,6 +11,16 @@ services:
       - app-network
     ports:
       - "3000:3000"
+
+  # slackin:
+  #   build: "./slackin"
+  #   image: slackin
+  #   container_name: slackin
+  #   restart: unless-stopped
+  #   networks:
+  #     - app-network
+  #   ports:
+  #     - "3001:3001"
 
 networks:
   app-network:
