@@ -9,13 +9,13 @@
 ## Using Docker
 
 ### Build and tag the docker image
-`docker-compose build` or `docker-compose -f docker-compose-dev.yml build`
+`docker-compose build -d` or `docker-compose -f docker-compose-dev.yml build`
 
 ### Build the docker container
-`docker-compose up` or `docker-compose -f docker-compose-dev.yml up`
+`docker-compose up -d` or `docker-compose -f docker-compose-dev.yml up`
 
 ### Build a running container
-`docker-compose up --build` or `docker-compose -f docker-compose-dev.yml up --build`
+`docker-compose up --build -d` or `docker-compose -f docker-compose-dev.yml up --build`
 
 ### List all containers
 `docker ps`

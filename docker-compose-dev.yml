@@ -7,22 +7,13 @@ services:
     image: nodejs
     container_name: nodejs
     restart: unless-stopped
+    command: npm run dev
     networks:
       - app-network
     ports:
       - "3000:3000"
     volumes:
       - /Users/sidnny/Projects/wtl/wtl-web/www:/home/node/www/
-
-  # slackin:
-  #   build: "./slackin"
-  #   image: slackin
-  #   container_name: slackin
-  #   restart: unless-stopped
-  #   networks:
-  #     - app-network
-  #   ports:
-  #     - "3001:3001"
 
 networks:
   app-network:
