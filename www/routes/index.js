@@ -1,3 +1,4 @@
+var axios = require('axios');
 var express = require('express');
 var router = express.Router();
 
@@ -8,7 +9,14 @@ router.get('/code_of_conduct', function(req, res, next) {
   res.render('coc', { title: 'Women Tech Leaders - Code of Conduct', pageId: 'code_of_conduct' });
 });
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Welcome to Women Tech Leaders.', pageId: 'index' });
+  axios.get('https://api.meetup.com/2/events?key=105d6a6a1487e4b58676725161d183b&group_urlname=wtl-women-tech-leaders-nyc&sign=true')
+    .then(function (response) {
+      res.render('index', { title: 'Welcome to Women Tech Leaders.', pageId: 'index', events: response.data.results });
+    })
+    .catch(function (error) {
+      console.error(error);
+      res.render('index', { title: 'Welcome to Women Tech Leaders.', pageId: 'index' });
+    });
 });
 
 module.exports = router;

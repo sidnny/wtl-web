@@ -8,6 +8,7 @@
   },
   "main": "server.js",
   "scripts": {
+    "dev": "nodemon --watch routes --watch views --watch app.js -e js,html ./bin/www",
     "start": "node ./bin/www",
     "test": "test"
   },
@@ -22,13 +23,17 @@
   },
   "homepage": "https://github.com/sidnny/wtl-web#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "cookie-parser": "~1.4.3",
     "debug": "^4.1.1",
     "express": "~4.16.0",
     "hbs": "^4.0.2",
     "http-errors": "^1.7.2",
     "http-proxy-middleware": "^0.19.1",
+    "meetup-api": "^1.4.37",
     "morgan": "~1.9.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
 }
