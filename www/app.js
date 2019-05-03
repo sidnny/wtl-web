@@ -39,6 +39,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', router);
 app.use('/slack', slack);
+app.use('/join', function(req, res, next) {
+  res.redirect(301, 'https://www.meetup.com/WTL-Women-Tech-Leaders-NYC/');
+});
 
 // app.use('/slackin', proxy({
 //   target: 'http://slackin:3001',
