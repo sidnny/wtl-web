@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var proxy = require('http-proxy-middleware');
 
-var slack = require('./routes/slack');
 var router = require('./routes/index');
 
 var app = express();
@@ -38,19 +37,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', router);
-app.use('/slack', slack);
+app.use('/slack', function(req, res, next) {
+  res.redirect(301, 'https://join.slack.com/t/wtlnyc/shared_invite/enQtNjM0ODY3ODc1MTkxLWE0OWM4M2Y0OTE0NTcxYWJhMjFhYzRjNjI2MDczNWEwZjQ4OTc2NjdjOTM5ZmU5NmE0MGEyMWMyM2ZlOGRmMDA');
+});
 app.use('/join', function(req, res, next) {
   res.redirect(301, 'https://www.meetup.com/WTL-Women-Tech-Leaders-NYC/');
 });
-
-// app.use('/slackin', proxy({
-//   target: 'http://slackin:3001',
-//   changeOrigin: true,
-//   pathRewrite: {
-//     '/slackin': '/'
-//   }
-// }))
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
