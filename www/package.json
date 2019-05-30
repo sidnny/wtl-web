@@ -9,7 +9,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon --watch routes --watch views --watch app.js -e js,html ./bin/www",
-    "start": "node ./bin/www",
+    "start": "NODE_ENV=production node ./bin/www",
     "test": "test"
   },
   "repository": {
