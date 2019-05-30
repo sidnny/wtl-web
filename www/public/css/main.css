@@ -4,7 +4,7 @@ lilac   #D9D0DC
 */
 html {
   height: 100%;
-  background: #d9cedc url(../img/lightparticles.png) fixed center center no-repeat;
+  background: #d9cedc url(https://cdn.wtl.nyc/img/lightparticles.png) fixed center center no-repeat;
 }
 
 ::selection {
@@ -53,7 +53,7 @@ header {
 }
 
 .logo {
-  background: url(../img/color.png) 0 0 no-repeat;
+  background: url(https://cdn.wtl.nyc/img/color.png) 0 0 no-repeat;
   display: block;
   width: 260px;
   height: 260px;
@@ -87,7 +87,7 @@ section {
 section:after {
   content: "";
   display: block;
-  background: url(../img/fleur.svg) center center no-repeat;
+  background: url(https://cdn.wtl.nyc/img/fleur.svg) center center no-repeat;
   width: 100%;
   height: 20px;
   margin-top: 45px;
