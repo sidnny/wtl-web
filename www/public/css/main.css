@@ -4,6 +4,7 @@ lilac   #D9D0DC
 */
 html {
   height: 100%;
+  background: #d9cedc url(../img/lightparticles.png) fixed center center no-repeat;
 }
 
 ::selection {
@@ -14,10 +15,13 @@ html {
 body {
   color: #000;
   font: normal 400 18px/22px minerva-modern, sans-serif;
-  background: #d9cedc url(../img/lightparticles.png) fixed center center no-repeat;
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 20%, rgba(255,255,255,0) 52%, rgba(255,255,255,0) 99%);
+  background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,0) 52%,rgba(255,255,255,0) 99%);
+  background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 20%,rgba(255,255,255,0) 52%,rgba(255,255,255,0) 99%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
 }
 
 .container {
@@ -43,13 +47,13 @@ p:first-child {
 }
 
 header {
-  background: #000;  /*padding: 110px 0 100px;*/
+  background: #fff;
   padding: 22px 0 18px;
-  border-bottom: 6px solid #3E0C64;
+  /* border-bottom: 6px solid #3E0C64; */
 }
 
 .logo {
-  background: url(../img/logo-color-darkbg.png) 0 0 no-repeat;
+  background: url(../img/color.png) 0 0 no-repeat;
   display: block;
   width: 260px;
   height: 260px;
@@ -306,11 +310,13 @@ footer a {
 
   .intro h2 {
     display: block;
-    left: 80px;
+    padding-left: 80px;
+    color: #d8cfdc;
+    z-index: 1;
   }
 
   .events h2 {
-    left: 80px;
+    padding-left: 80px;
   }
 
   .intro .button {
