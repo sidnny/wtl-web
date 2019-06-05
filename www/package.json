@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/sidnny/wtl-web#readme",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.19.0",
     "cookie-parser": "~1.4.3",
     "debug": "^4.1.1",
     "express": "~4.16.0",
-    "hbs": "^4.0.2",
+    "hbs": "^4.0.4",
     "http-errors": "^1.7.2",
     "http-proxy-middleware": "^0.19.1",
     "meetup-api": "^1.4.37",
