@@ -3,8 +3,8 @@ version: '3'
 services:
 
   nodejs:
-    build: "./www"
-    image: nodejs
+    # build: "./www"
+    image: sidnny/wtl:latest
     container_name: nodejs
     restart: unless-stopped
     command: npm start
