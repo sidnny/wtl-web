@@ -1,5 +1,8 @@
 # Women Tech Leaders website
 
+## Running in production
+For a clean start run `./init-letsencrypt.sh` otherwise all you need is `docker-compose up`.
+
 ## Installation
 `npm i`
 
@@ -28,7 +31,6 @@
 
 ### To rebuild an image
 `docker-compose build` or `docker-compose up --build`
-
 
 ### To restart a running container
 `docker-compose restart nodejs`
