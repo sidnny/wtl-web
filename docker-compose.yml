@@ -20,41 +20,48 @@ services:
       - "443:443"
     volumes:
       - web-root:/var/www/html
-      - ./nginx-conf:/etc/nginx/conf.d
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-      - dhparam:/etc/ssl/certs
+      # - ./nginx-conf:/etc/nginx/conf.d
+      - ./data/nginx:/etc/nginx/conf.d
+      # - certbot-etc:/etc/letsencrypt
+      # - certbot-var:/var/lib/letsencrypt
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+      # - dhparam:/etc/ssl/certs
     depends_on:
       - nodejs
     networks:
       - app-network
+    # command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
 
   certbot:
     image: certbot/certbot
     container_name: certbot
     volumes:
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-      - web-root:/var/www/html
-    depends_on:
-      - webserver
-    command: certonly --webroot --webroot-path=/var/www/html --email founders@wtl.nyc --agree-tos --no-eff-email --force-renewal -d wtl.nyc -d www.wtl.nyc
+      # - certbot-etc:/etc/letsencrypt
+      # - certbot-var:/var/lib/letsencrypt
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+      # - web-root:/var/www/html
+    # depends_on:
+    #   - webserver
+    # command: certonly --staging --webroot --webroot-path=/var/www/html --email founders@wtl.nyc --agree-tos --no-eff-email --force-renewal -d wtl.nyc -d www.wtl.nyc
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
 volumes:
-  certbot-etc:
-  certbot-var:
+  # certbot-etc:
+  # certbot-var:
   web-root:
     driver: local
     driver_opts:
       type: none
-      device: /home/sid/wtl-web/www/public/
+      device: $PWD/www/public/
       o: bind
-  dhparam:
-    driver: local
-    driver_opts:
-      type: none
-      device: /home/sid/wtl-web/dhparam/
-      o: bind
+  # dhparam:
+  #   driver: local
+  #   driver_opts:
+  #     type: none
+  #     device: $PWD/dhparam/
+  #     o: bind
 
 networks:
   app-network:

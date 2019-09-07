@@ -29,6 +29,5 @@
 ### To rebuild an image
 `docker-compose build` or `docker-compose up --build`
 
-
 ### To restart a running container
 `docker-compose restart nodejs`
