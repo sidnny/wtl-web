@@ -1,5 +1,8 @@
 # Women Tech Leaders website
 
+## Running in production
+For a clean start run `./init-letsencrypt.sh` otherwise all you need is `docker-compose up`.
+
 ## Installation
 `npm i`
 

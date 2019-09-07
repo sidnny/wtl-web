@@ -3,7 +3,6 @@ version: '3'
 services:
 
   nodejs:
-    # build: "./www"
     image: sidnny/wtl:latest
     container_name: nodejs
     restart: unless-stopped
@@ -23,12 +22,11 @@ services:
       - ./data/nginx:/etc/nginx/conf.d
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
-      # - dhparam:/etc/ssl/certs
     depends_on:
       - nodejs
     networks:
       - app-network
-    # command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
 
   certbot:
     image: certbot/certbot
@@ -37,26 +35,15 @@ services:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
       - web-root:/var/www/html
-    # depends_on:
-    #   - webserver
-    # command: certonly --staging --webroot --webroot-path=/var/www/html --email founders@wtl.nyc --agree-tos --no-eff-email --force-renewal -d wtl.nyc -d www.wtl.nyc
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
 volumes:
-  # certbot-etc:
-  # certbot-var:
   web-root:
     driver: local
     driver_opts:
       type: none
       device: $PWD/www/public/
       o: bind
-  # dhparam:
-  #   driver: local
-  #   driver_opts:
-  #     type: none
-  #     device: $PWD/dhparam/
-  #     o: bind
 
 networks:
   app-network:
