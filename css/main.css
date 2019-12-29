@@ -1,10 +1,17 @@
 /*
-violet  #3E0C64
-lilac   #D9D0DC
+#3E0C64
+#D9D0DC
+
+crown:
+#5F259E
+#CABBFF
+text:
+#8357BE
+
 */
 html {
   height: 100%;
-  background: #d9cedc url(https://cdn.wtl.nyc/img/lightparticles.png) fixed center center no-repeat;
+  background: #d9cedc url(../img/lightparticles.png) fixed center center no-repeat;
 }
 
 ::selection {
@@ -51,7 +58,7 @@ header {
 }
 
 .logo {
-  background: url(https://cdn.wtl.nyc/img/color.png) 0 0 no-repeat;
+  background: url(../img/logo.svg) 0 0 no-repeat;
   display: block;
   width: 260px;
   height: 260px;
@@ -85,7 +92,7 @@ section {
 section:after {
   content: "";
   display: block;
-  background: url(https://cdn.wtl.nyc/img/fleur.svg) center center no-repeat;
+  background: url(../img/fleur.svg) center center no-repeat;
   width: 100%;
   height: 20px;
   margin-top: 45px;
