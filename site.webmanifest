@@ -2,11 +2,11 @@
   "short_name": "WTL",
   "name": "Women Tech Leaders",
   "icons": [{
-    "src": "icon.png",
+    "src": "img/logo-manifest.png",
     "type": "image/png",
     "sizes": "192x192"
   }],
-  "start_url": "/?utm_source=homescreen",
+  "start_url": "/?utm_source=index",
   "background_color": "#3E0C64",
   "theme_color": "#3E0C64"
 }
