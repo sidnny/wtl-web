@@ -22,6 +22,7 @@ html {
 
 }
 
+
 ::selection {
   background: #baa5ca;
   text-shadow: none;
@@ -38,6 +39,7 @@ body {
 
 .container {
   flex: 1;
+  overflow-x: hidden;
 }
 
 a {
@@ -312,6 +314,7 @@ footer a {
   #index-page h1 {
     padding: 0;
     margin-bottom: 36px;
+    max-width: 500px;
   }
 
   .intro {
