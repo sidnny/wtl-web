@@ -1,9 +1,14 @@
 (function() {
+  var scrolled;
   $(window).on("scroll", function() {
-    if ($(window).scrollTop() > 10) {
-      $(".logo").addClass("scrolled");
-    } else {
-      $(".logo").removeClass("scrolled");
+    if (scrolled || document.body.scrollHeight - window.innerHeight > 136) {
+      if ($(window).scrollTop() > 10) {
+        scrolled = true;
+        $(".logo").addClass("scrolled");
+      } else {
+        scrolled = false;
+        $(".logo").removeClass("scrolled");
+      }
     }
   });
 }());
